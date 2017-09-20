@@ -196,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1175748028}
   - component: {fileID: 1175748029}
+  - component: {fileID: 1175748030}
   m_Layer: 0
   m_Name: planeTop
   m_TagString: Untagged
@@ -231,6 +232,18 @@ MonoBehaviour:
   CameraObject: {fileID: 1498220463}
   angleSpeed: 5
   startAngle: 0
+--- !u!65 &1175748030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175748027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1 &1498220463
 GameObject:
   m_ObjectHideFlags: 0

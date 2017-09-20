@@ -9,6 +9,7 @@ public class RotatePlane : MonoBehaviour {
     public float angleSpeed ;
     public float startAngle ;
     float angle;
+    bool moving = true;
 
 	// Use this for initialization
 	void Start () {
@@ -30,15 +31,27 @@ public class RotatePlane : MonoBehaviour {
         
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-        angle += angleSpeed * Time.deltaTime;
-        float x = Mathf.Cos(angle);
-        float z = Mathf.Sin(angle);
-        transform.position = new Vector3(x * radius, init_y, z * radius);
 
-        // Debug.Log(angle);
-        transform.LookAt(CameraObject.transform,Vector3.up);
+    // Update is called once per frame
+    void Update()
+    {
+        if (moving) {
+            angle += angleSpeed * Time.deltaTime;
+            float x = Mathf.Cos(angle);
+            float z = Mathf.Sin(angle);
+            transform.position = new Vector3(x * radius, init_y, z * radius);
+
+            // Debug.Log(angle);
+            transform.LookAt(CameraObject.transform, Vector3.up);
+        }
+    }
+
+    public void StopRotate()
+    {
+        moving = false;
+    }
+    public void StartRotate()
+    {
+        moving = true;
     }
 }
